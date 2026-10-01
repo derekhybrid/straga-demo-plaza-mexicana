@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plaza Mexicana | Mexican Grocery Store &mdash; Egg Harbor City, NJ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#e8541f;
+    --orange-deep:#c9430f;
+    --yellow:#f7c948;
+    --cream:#fff6e6;
+    --red:#c41e2a;
+    --ink:#2b1608;
+    --ink-soft:#5a3a24;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;font-family:'Nunito Sans',sans-serif;color:var(--ink);background:var(--cream);}
+  h1,h2,h3,.brand{font-family:'Baloo 2',cursive;}
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+
+  .topbar{
+    background:var(--ink);color:#fff;font-size:.85rem;text-align:center;
+    padding:8px 12px;letter-spacing:.02em;
+  }
+  .topbar strong{color:var(--yellow);}
+
+  header.hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(255,255,255,.15), transparent 40%),
+      linear-gradient(135deg, var(--orange) 0%, var(--orange-deep) 60%, var(--red) 100%);
+    color:#fff;padding:70px 24px 90px;text-align:center;
+  }
+  .pepper{position:absolute;font-size:6rem;opacity:.18;transform:rotate(-18deg);}
+  .pepper.one{top:-10px;left:-20px;}
+  .pepper.two{bottom:-30px;right:-10px;transform:rotate(20deg);}
+  .brand-badge{
+    display:inline-block;background:var(--yellow);color:var(--ink);
+    font-weight:800;padding:6px 18px;border-radius:999px;font-size:.85rem;
+    letter-spacing:.08em;text-transform:uppercase;margin-bottom:18px;
+    box-shadow:0 4px 0 rgba(0,0,0,.15);
+  }
+  header.hero h1{
+    font-size:clamp(2.4rem,7vw,4rem);margin:0 0 10px;font-weight:800;
+    text-shadow:3px 3px 0 rgba(0,0,0,.2);letter-spacing:.01em;
+  }
+  header.hero p.sub{font-size:1.25rem;font-weight:600;margin:0 auto 28px;max-width:560px;opacity:.96;}
+  .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;padding:14px 30px;border-radius:12px;font-weight:700;
+    text-decoration:none;font-size:1.05rem;transition:transform .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{background:var(--yellow);color:var(--ink);box-shadow:0 5px 0 var(--orange-deep);}
+  .btn-outline{background:rgba(255,255,255,.12);color:#fff;border:2px solid rgba(255,255,255,.6);}
+
+  .wave{display:block;width:100%;line-height:0;margin-top:-6px;}
+
+  main{max-width:1040px;margin:0 auto;padding:0 24px;}
+
+  section{padding:64px 0;}
+  .section-eyebrow{
+    color:var(--orange-deep);font-weight:800;text-transform:uppercase;
+    letter-spacing:.12em;font-size:.8rem;margin-bottom:8px;
+  }
+  section h2{font-size:clamp(1.8rem,4vw,2.4rem);margin:0 0 18px;color:var(--ink);}
+
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;}
+  .about-grid p{font-size:1.08rem;line-height:1.7;color:var(--ink-soft);}
+  .about-card{
+    background:#fff;border-radius:20px;padding:28px;box-shadow:0 10px 30px rgba(233,84,31,.15);
+    border:3px solid var(--yellow);
+  }
+  .about-card h3{margin:0 0 14px;color:var(--orange-deep);font-size:1.3rem;}
+  .about-card ul{margin:0;padding-left:20px;color:var(--ink-soft);line-height:1.9;}
+
+  .services{
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:20px;
+  }
+  .service-card{
+    background:#fff;border-radius:16px;padding:26px 22px;text-align:center;
+    box-shadow:0 6px 18px rgba(43,22,8,.08);border-bottom:5px solid var(--orange);
+  }
+  .service-card .emoji{font-size:2.4rem;margin-bottom:10px;}
+  .service-card h3{margin:0 0 8px;font-size:1.15rem;color:var(--ink);}
+  .service-card p{margin:0;color:var(--ink-soft);font-size:.95rem;line-height:1.5;}
+
+  .visit{
+    background:var(--ink);color:#fff;border-radius:24px;padding:44px;
+    display:grid;grid-template-columns:1fr 1fr;gap:32px;
+  }
+  .visit h2{color:var(--yellow);}
+  .visit .info-row{display:flex;gap:12px;margin-bottom:16px;font-size:1.02rem;align-items:flex-start;}
+  .visit .info-row .icon{font-size:1.3rem;}
+  .visit a.link{color:var(--yellow);font-weight:700;text-decoration:underline;}
+  .hours-table{width:100%;border-collapse:collapse;font-size:.98rem;}
+  .hours-table td{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.12);}
+  .hours-table td:last-child{text-align:right;color:var(--yellow);font-weight:700;}
+
+  footer{
+    text-align:center;padding:36px 24px;color:var(--ink-soft);font-size:.9rem;
+  }
+  footer .brand{color:var(--orange-deep);font-size:1.1rem;}
+
+  @media (max-width:760px){
+    .about-grid, .visit{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="topbar">🚚 <strong>Entregamos a domicilio</strong> &middot; Free local delivery available &middot; Money transfer service on-site</div>
+
+  <header class="hero">
+    <span class="pepper one">🌶️</span>
+    <span class="pepper two">🌶️</span>
+    <span class="brand-badge">Egg Harbor City, NJ</span>
+    <h1>Plaza Mexicana</h1>
+    <p class="sub">Your neighborhood Mexican grocery &mdash; fresh produce, authentic products, party rentals, and money transfers, all under one roof.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="tel:6099653111">📞 (609) 965-3111</a>
+      <a class="btn btn-outline" href="#visit">Get Directions</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="about-grid">
+        <div>
+          <div class="section-eyebrow">Sobre Nosotros</div>
+          <h2>A little bit of home, right on Philadelphia Ave</h2>
+          <p>Plaza Mexicana brings the flavors and traditions of Mexico to Egg Harbor City. From fresh vegetables to authentic Mexican products and hand-picked artesanías, we stock what the big supermarkets don't &mdash; and what your kitchen has been missing.</p>
+          <p>Need something for a celebration? We rent furniture and party supplies too. Need to send money home? We've got that covered right at the counter.</p>
+        </div>
+        <div class="about-card">
+          <h3>Why Plaza Mexicana</h3>
+          <ul>
+            <li>Fresh produce &amp; authentic Mexican groceries</li>
+            <li>Artesanías &amp; imported goods</li>
+            <li>Furniture &amp; party rentals for fiestas</li>
+            <li>Money transfer services (Envío de Dinero)</li>
+            <li>Free local delivery</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-eyebrow">What We Offer</div>
+      <h2>More than a grocery store</h2>
+      <div class="services">
+        <div class="service-card">
+          <div class="emoji">🥬</div>
+          <h3>Fresh Groceries</h3>
+          <p>Vegetales frescos and authentic Mexican pantry staples, stocked weekly.</p>
+        </div>
+        <div class="service-card">
+          <div class="emoji">🎉</div>
+          <h3>Party Rentals</h3>
+          <p>Renta de muebles para tus fiestas &mdash; tables, chairs and more for any celebration.</p>
+        </div>
+        <div class="service-card">
+          <div class="emoji">💸</div>
+          <h3>Money Transfers</h3>
+          <p>Tenemos envío de dinero &mdash; send money home quickly and safely, right here in town.</p>
+        </div>
+        <div class="service-card">
+          <div class="emoji">🚚</div>
+          <h3>Local Delivery</h3>
+          <p>Entregamos a domicilio &mdash; groceries brought straight to your door in Egg Harbor City.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="visit">
+      <div class="visit">
+        <div>
+          <h2>Visit Us</h2>
+          <div class="info-row"><span class="icon">📍</span><span>144 Philadelphia Ave, Egg Harbor City, NJ 08215</span></div>
+          <div class="info-row"><span class="icon">📞</span><a class="link" href="tel:6099653111">(609) 965-3111</a></div>
+          <div class="info-row"><span class="icon">✉️</span><a class="link" href="mailto:Plazamexicananj@gmail.com">Plazamexicananj@gmail.com</a></div>
+          <div class="info-row"><span class="icon">📘</span><a class="link" href="https://www.facebook.com/plazamexicananj" target="_blank" rel="noopener">Message us on Facebook</a></div>
+        </div>
+        <div>
+          <table class="hours-table">
+            <tr><td>Monday &ndash; Saturday</td><td>Open</td></tr>
+            <tr><td>Sunday</td><td>Open</td></tr>
+            <tr><td colspan="2" style="border:none;padding-top:14px;color:rgba(255,255,255,.6);font-size:.85rem;">Call ahead to confirm holiday hours.</td></tr>
+          </table>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="brand">Plaza Mexicana</p>
+    <p>This is a free demo site built by <strong>Straga Hybrid Marketing</strong> &mdash; not Plaza Mexicana's official website.</p>
+  </footer>
+
+</body>
+</html>
